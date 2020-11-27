@@ -8,8 +8,8 @@ module.exports = {
             createdAt: new Date()
         });
         discussion.save()
-        .then(result => { return 'created discussion'; })
         .catch(error => `error ${error.message}`);
+        return discussion;
     },
     findDiscussion: () => {
         let reponse = Discussion.find().then(discussions => { return discussions; });
