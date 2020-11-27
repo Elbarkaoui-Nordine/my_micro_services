@@ -37,10 +37,6 @@ $router->post('/login', function (Request $request) use ($router) {
     ]);
 });
 
-$router->get('/users', function (Request $request) use ($router) {
-    return Http::withToken($request->header('token'))->get('http://localhost:8001/users');
-});
-
 $router->post('/message', function (Request $request) use ($router) {
     return Http::withToken($request->header('token'))->post('http://localhost:8001/message',[
         'content' => $request->content,

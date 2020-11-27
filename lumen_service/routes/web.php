@@ -26,10 +26,6 @@ $router->post('register', 'AuthController@register');
 $router->post('login', 'AuthController@authenticate');
 
 $router->group(['middleware' => 'jwt.auth'], function() use ($router) {
-
-    // get all users, test for token middleware
-    $router->get('users', 'UserController@index');
-
     // message routes
     // create message 
     $router->post('message', 'MessageController@store');
